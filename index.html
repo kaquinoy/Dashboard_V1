@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peru Reactiva Analytics - Dashboard Interactivo</title>
+    <meta name="description" content="Analisis interactivo de 501,301 empresas del Programa Reactiva Peru. Descubre patrones ocultos en la distribucion del credito gubernamental.">
+    <meta name="keywords" content="Reactiva Peru, analisis datos, dashboard, concentracion credito, PYME, microfinanzas">
+    <meta name="author" content="Claude Analytics">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Peru Reactiva Analytics - Dashboard Interactivo">
+    <meta property="og:description" content="Analisis de 501,301 empresas del Programa Reactiva Peru con visualizaciones interactivas">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reactiva-peru-analytics.netlify.app">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI0Q5MTAyMyI+PHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJ6Ii8+PC9zdmc+">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🇵🇪 Peru Reactiva Analytics</h1>
+            <p>Analisis Interactivo de 501,301 Empresas Beneficiarias</p>
+            <p><em>Revelando patrones ocultos en el credito gubernamental peruano</em></p>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">501,301</span>
+                <span class="stat-label">Empresas Totales</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">S/ 57.9B</span>
+                <span class="stat-label">Credito Total</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0.8805</span>
+                <span class="stat-label">Coef. Gini</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">46.4%</span>
+                <span class="stat-label">Credito del 1%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3.8x</span>
+                <span class="stat-label">Inequidad Lima</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Navigation Pills -->
+        <nav class="nav-pills">
+            <a href="#insights" class="nav-pill">📊 Insights Criticos</a>
+            <a href="#concentration" class="nav-pill">📈 Concentracion</a>
+            <a href="#sectors" class="nav-pill">🏭 Sectores</a>
+            <a href="#geography" class="nav-pill">🗺️ Geografia</a>
+            <a href="#entities" class="nav-pill">🏦 Entidades</a>
+        </nav>
+
+        <!-- Critical Insights Section -->
+        <section id="insights" class="section">
+            <div class="section-header">
+                <h2>🚨 Hallazgos Criticos</h2>
+                <p>Los descubrimientos mas impactantes del analisis de datos</p>
+            </div>
+            <div class="section-content">
+                <div class="insights-grid">
+                    <div class="insight-card critical">
+                        <h3>💥 Concentracion Extrema del Credito</h3>
+                        <span class="highlight">1% controla 46.4%</span>
+                        <p>El programa muestra una desigualdad brutal. Las 5,013 empresas mas grandes recibieron mas dinero que las 450,000 mas pequenas combinadas.</p>
+                        <p><strong>Coeficiente de Gini: 0.8805</strong> (concentracion extrema)</p>
+                    </div>
+
+                    <div class="insight-card warning">
+                        <h3>🏦 Dos Programas Paralelos</h3>
+                        <span class="highlight">255K vs 65K</span>
+                        <p><strong>MIBANCO:</strong> Microfinanzas masivas (S/ 10,551 promedio)<br>
+                        <strong>Bancos Grandes:</strong> Rescate corporativo (S/ 400K+ promedio)</p>
+                        <p>Estrategias completamente diferentes en un mismo programa.</p>
+                    </div>
+
+                    <div class="insight-card info">
+                        <h3>🗺️ Inequidad Geografica Brutal</h3>
+                        <span class="highlight">Lima 3.8x mas</span>
+                        <p><strong>Lima:</strong> 30.6% empresas → 62.7% del credito<br>
+                        <strong>Interior:</strong> 69.4% empresas → 37.3% del credito</p>
+                        <p>Desequilibrio territorial que concentra recursos en la capital.</p>
+                    </div>
+
+                    <div class="insight-card success">
+                        <h3>📋 Alcance del Sector Informal</h3>
+                        <span class="highlight">98.7% RUCs atipicos</span>
+                        <p>495,023 empresas con registros no estandar accedieron al programa.</p>
+                        <p>Evidencia de que el programa si llego masivamente al sector informal.</p>
+                    </div>
+
+                    <div class="insight-card warning">
+                        <h3>🏭 Sectores Paradojicos</h3>
+                        <span class="highlight">Mineria 5.6x</span>
+                        <p><strong>Mas favorecidos:</strong> Mineria, Electricidad (menos afectados por COVID)<br>
+                        <strong>Menos favorecidos:</strong> Restaurantes, Turismo (mas afectados)</p>
+                        <p>Los sectores mas golpeados recibieron proporcionalmente menos apoyo.</p>
+                    </div>
+
+                    <div class="insight-card critical">
+                        <h3>💰 Empresas de S/ 10 Millones</h3>
+                        <span class="highlight">500+ empresas</span>
+                        <p>Mas de 500 empresas recibieron el monto maximo del programa.</p>
+                        <p>Concentradas en agroexportacion e industria manufacturera de gran escala.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concentration Analysis -->
+        <section id="concentration" class="section">
+            <div class="section-header">
+                <h2>📈 Analisis de Concentracion</h2>
+                <p>Curva de Lorenz y distribucion del credito</p>
+            </div>
+            <div class="section-content">
+                <div class="chart-container">
+                    <h3>Curva de Lorenz - Concentracion del Credito</h3>
+                    <div class="chart-wrapper">
+                        <div class="chart-status loading" id="lorenz-status">Cargando...</div>
+                        <canvas id="lorenzChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="concentration-stats">
+                    <div class="percentile-card">
+                        <h4>🔥 Top 1% de Empresas</h4>
+                        <p>Controla el <strong>46.4%</strong> del credito total</p>
+                        <p class="threshold">Umbral: >S/ 2,120,000</p>
+                    </div>
+                    <div class="percentile-card">
+                        <h4>⚡ Top 5% de Empresas</h4>
+                        <p>Controla el <strong>74.8%</strong> del credito total</p>
+                        <p class="threshold">Umbral: >S/ 385,841</p>
+                    </div>
+                    <div class="percentile-card">
+                        <h4>📊 Top 10% de Empresas</h4>
+                        <p>Controla el <strong>85.1%</strong> del credito total</p>
+                        <p class="threshold">Umbral: >S/ 144,868</p>
+                    </div>
+                    <div class="percentile-card">
+                        <h4>😢 50% Mas Pequenas</h4>
+                        <p>Solo accede al <strong>2.3%</strong> del credito</p>
+                        <p class="threshold">Umbral: <S/ 12,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors Analysis -->
+        <section id="sectors" class="section">
+            <div class="section-header">
+                <h2>🏭 Analisis Sectorial</h2>
+                <p>Comportamiento crediticio por sector economico</p>
+            </div>
+            <div class="section-content">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Participacion por Sector (%)</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="sectors-pie-status">Cargando...</div>
+                            <canvas id="sectorsPieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Eficiencia Crediticia por Sector</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="efficiency-status">Cargando...</div>
+                            <canvas id="efficiencyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geography Analysis -->
+        <section id="geography" class="section">
+            <div class="section-header">
+                <h2>🗺️ Analisis Geografico</h2>
+                <p>Distribucion territorial del credito</p>
+            </div>
+            <div class="section-content">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Top 15 Departamentos por Monto</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="geography-status">Cargando...</div>
+                            <canvas id="geographyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Lima vs Resto del Peru</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="lima-status">Cargando...</div>
+                            <canvas id="limaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Entities Analysis -->
+        <section id="entities" class="section">
+            <div class="section-header">
+                <h2>🏦 Entidades Financieras</h2>
+                <p>Analisis del comportamiento de bancos y financieras</p>
+            </div>
+            <div class="section-content">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Participacion por Cantidad de Prestamos</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="entities-status">Cargando...</div>
+                            <canvas id="entitiesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Ticket Promedio por Entidad</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart-status loading" id="ticket-status">Cargando...</div>
+                            <canvas id="ticketChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>📊 Metodologia</h2>
+                <p>Como se realizo este analisis</p>
+            </div>
+            <div class="section-content">
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <h4>📋 Fuente de Datos</h4>
+                        <p>Dataset oficial del Programa Reactiva Peru con 501,301 registros de empresas beneficiarias al 30 de octubre 2020.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4>🧹 Limpieza de Datos</h4>
+                        <p>Procesamiento con Python/Pandas: normalizacion de montos, validacion de RUCs, categorizacion sectorial.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4>📈 Analisis Estadistico</h4>
+                        <p>Calculo de coeficiente de Gini, analisis de percentiles, ratios de eficiencia crediticia por sector.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4>🎨 Visualizacion</h4>
+                        <p>Dashboard interactivo con Chart.js, responsive design, optimizado para insight discovery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Section -->
+        <div class="export-section">
+            <h3>📤 Exportar Analisis</h3>
+            <p>Descarga los datos y reportes del analisis</p>
+            <br>
+            <button class="btn" onclick="exportJSON()">📄 Exportar JSON</button>
+            <button class="btn" onclick="exportReport()">📋 Exportar Reporte</button>
+            <button class="btn" onclick="window.print()">🖨️ Imprimir Dashboard</button>
+            <button class="btn" onclick="shareAnalysis()">🔗 Compartir Analisis</button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🇵🇪 Peru Reactiva Analytics</h3>
+                <p>Analisis completo de 501,301 empresas beneficiarias</p>
+                <p>Dataset: Programa Reactiva Peru (Corte: 30 octubre 2020)</p>
+            </div>
+            <div class="footer-section">
+                <h4>📊 Tecnologias</h4>
+                <p>Python • Pandas • Chart.js • CSS Grid</p>
+                <p>Responsive Design • Data Visualization</p>
+            </div>
+            <div class="footer-section">
+                <h4>🔗 Enlaces</h4>
+                <p><a href="#insights">Insights Criticos</a></p>
+                <p><a href="#concentration">Analisis de Concentracion</a></p>
+                <p><a href="#sectors">Analisis Sectorial</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Peru Reactiva Analytics. Desarrollado con tecnicas avanzadas de ciencia de datos.</p>
+            <p><em>"Revelando patrones ocultos para decisiones mas inteligentes"</em></p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="app.js"></script>
+
+    <!-- Analytics (opcional) -->
+    <script>
+        // Google Analytics o similar se puede agregar aqui
+        console.log('Peru Reactiva Analytics - Dashboard cargado exitosamente');
+    </script>
+</body>
+</html>

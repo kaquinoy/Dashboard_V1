@@ -1,0 +1,62 @@
+# Netlify configuration for Peru Reactiva Analytics
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Publish directory (already built static files)
+  publish = "."
+
+  # No build command needed - static files ready for deployment
+  command = "echo 'Static site - no build required'"
+
+[build.environment]
+  # Environment variables
+  NODE_VERSION = "18"
+
+# Redirect and header rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[headers]]
+  # Security headers for all pages
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'"
+
+[[headers]]
+  # Cache static assets
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/app.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Form handling (if needed in the future)
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = false
+
+[build.processing.js]
+  bundle = false
+  minify = false
+
+[build.processing.html]
+  pretty_urls = true
+
+# Error pages
+[[redirects]]
+  from = "/404"
+  to = "/index.html"
+  status = 200

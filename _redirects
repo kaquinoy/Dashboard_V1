@@ -1,0 +1,22 @@
+# Netlify redirects file for Peru Reactiva Analytics
+# Single Page Application routing
+
+# Redirect all routes to index.html (for SPA behavior)
+/*    /index.html   200
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Cache static assets
+/styles.css
+  Cache-Control: public, max-age=31536000
+
+/app.js
+  Cache-Control: public, max-age=31536000
+
+# Force HTTPS
+http://reactiva-peru-analytics.netlify.app/*  https://reactiva-peru-analytics.netlify.app/:splat  301!
